@@ -5,7 +5,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Runnig hugo build...
-      - docker run -v `pwd`/site:/src -u hugo jguyomard/hugo-builder hugo
+      - docker run -v `pwd`/site:/src jguyomard/hugo-builder hugo
 artifacts:
   files:
     - site/public/*
