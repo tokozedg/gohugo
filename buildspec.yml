@@ -8,4 +8,5 @@ phases:
       - docker run -v `pwd`/site:/src jguyomard/hugo-builder hugo
 artifacts:
   files:
-    - site/public/*
+    - *
+  base-directory: site/public/
