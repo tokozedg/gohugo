@@ -6,7 +6,6 @@ phases:
       - echo Build started on `date`
       - echo Runnig hugo build...
       - docker run -v `pwd`/site:/src jguyomard/hugo-builder hugo
-artifacts:
-  files:
-    - "**/*"
-  base-directory: site/public/
+  post_build:
+    commands:
+      - aws s3 sync site/public/ s3://3dhubs-tornike-test/hugo/
